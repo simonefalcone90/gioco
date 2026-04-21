@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>TASK MASTER</h1>
+        
+        <div id="setup-screen">
+            <p>Quanti giocatori? <span id="playerValue">2</span></p>
+            <input type="range" id="playerCount" min="2" max="10" value="2" step="1" oninput="updatePlayerValue(this.value)">
+            <button class="btn-green" onclick="startGame()">INIZIA IL GIOCO</button>
+        </div>
+
+        <div id="game-screen" class="hidden">
+            <div id="status-bar">
+                <span>Grado: <b id="display-grado">1</b></span>
+                <span>Fatti: <b id="display-count">0</b>/<span id="display-target">0</span></span>
+            </div>
+            
+            <div id="task-card">
+                <h2 id="task-text">Caricamento...</h2>
+                <div id="timer-display" class="hidden"></div>
+            </div>
+
+            <div id="actions">
+                <button id="btn-accept" class="btn-green">ACCETTA</button>
+                <button id="btn-skip" class="btn-red">PASSA</button>
+            </div>
+            
+            <button id="btn-done" class="btn-blue hidden">COMPLETATO</button>
+        </div>
+
+        <div id="end-screen" class="hidden">
+            <h2>GIOCO COMPLETATO!</h2>
+            <p>Tutti i gradi sono stati superati.</p>
+            <button class="btn-green" onclick="location.reload()">RIGIOCA</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
